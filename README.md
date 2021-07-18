@@ -28,9 +28,9 @@
 
 ## 💻 Projeto
 Este portfólio é uma página institucional no formato SPA (Single Page Application), responsiva e com fins educativos. 
-<br> Realizado no curso <p >&nbsp;<img src="https://img.shields.io/static/v1?label=&message=A%20Liga%20Digital&color=C06014&labelColor=0000"></p>
+Realizado no curso da:<p>&nbsp;<img src="https://img.shields.io/static/v1?label=&message=A%20Liga%20Digital&color=C06014&labelColor=0000"></p>
 Em parceria com a 
-<p >&nbsp;<img src="https://img.shields.io/static/v1?label=&message=Driven.cx&color=07a377&labelColor=0000"></p>
+<p>&nbsp;<img src="https://img.shields.io/static/v1?label=&message=Driven.cx&color=07a377&labelColor=0000"></p>
 <br>
 
 ## ⌨️ Como usar
