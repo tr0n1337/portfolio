@@ -1,26 +1,22 @@
-/* ====== GLOBAL SETTINGS ====== */
-
-/* FONT */
+/* ==== FONT ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
-/* RESET CSS */
+/* ==== RESET CSS ==================== */
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
-  list-style: none;
 }
 img{
   width: 100%;
   height: auto;
 }
 
-/* COLORS */
+/* ==== COLORS ==================== */
 html{
-  
   /* LIGHT THEME */
   --l-bg: #F3F4ED;
   --l-1: #536162;
@@ -29,61 +25,198 @@ html{
 
   /* FONT-SIZE DEFAULT */
   font-size: 62.5%;
+
+  /* SCROLL */
+  scroll-behavior: smooth;
+
 }
 
-/* BG */
+/* ==== DEFAULT ==================== */
 body{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: var(--l-bg);
 
   font-family: "Fira Code", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 500;
 }
 .site-wrapper{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
 }
-ul li{
-  padding: 0 1.3rem;
-  display: inline;
+ul{
+  list-style: none;
+}
+.divisor-1{
+  height: 0.1rem;
+  background: linear-gradient(270deg, var(--l-3) 0%, rgba(105, 51, 8, .34) 100%);
+}
+.divisor-2{
+  height: 0.1rem;
+  background: linear-gradient(90deg, var(--l-3) 0%, rgba(105, 51, 8, .34) 100%);
 }
 
-/* LAYOUT */
+/* ==== LAYOUT ==================== */
 .container{
   margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  
 }
-
 .section{
+  margin: 0 auto;
   padding: 5rem 0;
 }
-
 #header{
-  border-bottom: .1rem solid rgba(221, 222, 213, .5) ;
+  display: flex;
+  width: 100%;
+  box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
 }
 
+/* ==== LOGO ====================*/
+.logo{
+  width: 8rem;
+}
+
+/* ==== NAV ==================== */
 nav{
-  height: 9rem;
+  height: 8rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;  
+  justify-content: space-around;
+  width: 100%;  
+
+  margin-right: 3rem;
+}
+.title{
+  color: var(--l-2);
+  font-family: "Fira COde", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+nav ul li a{
+  position: relative;
+  transition: color .4s;
+}
+nav ul li a:hover{
+  color: var(--l-3);
+}
+nav ul li a::after{
+  content: "";
+  width: 0%;
+  height: 0.3rem;
+  background-color: var(--l-3);
+  
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+
+  transition: width .2s;
+}
+nav ul li a:hover::after{
+  width: 100%;
+}
+nav .menu{
+  opacity: 0;
+  visibility: hidden;
 }
 
-.logo{
-  width: 10rem;
+/* ==== SHOW-MENU (MOBILE) ==================== */
+nav.show-menu .menu{
+  opacity: 1;
+  visibility: visible;
+  
+  background: var(--l-bg);
+  
+  width: 100vw;
+  height: 100vh;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav.show-menu ul li{
+  padding: 2.5rem 0;
+  text-align: center;
 }
 
-li .title{
+/* ==== VISIBLE MENU ==================== */
+.toggle{
+  cursor: pointer;
+
+  font-size: 3rem;
+  color: var(--l-3);
+}
+
+/* ==== ICON MENU ==================== */
+nav .open-menu{
+  transition: color .5s;
+}
+nav .close-menu{
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  right: 3.5rem;
+  z-index: 101;
+
+  transition: color .5s;
+}
+nav.show-menu .close-menu{
+  visibility: visible;
+  opacity: 1;
+}
+/* HOVER */
+nav .open-menu:hover{
+  color: var(--l-2);
+}
+nav.show-menu .close-menu:hover{
   color: var(--l-2);
 }
 
-/* HOME */
+
+/* ==== BUTTON UP ==================== */
+#btn-up.show-up{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+
+  width: 4rem;
+  height: 4rem;
+
+  background: var(--l-3) ;
+  border-radius: .4rem;
+
+  transition: background-color .5s;
+}
+#btn-up i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: var(--l-bg);
+}
+#btn-up.show-up:hover{
+  background: var(--l-2);
+}
+
+/* ==== HOME ==================== */
+#home{
+  overflow: hidden;
+}
 #home .container{
-  margin:0;
+  height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
 }
 #textoHome{
   color: var(--l-1);
@@ -91,6 +224,23 @@ li .title{
 #nome{
   color: var(--l-3);
 }
+.show-wm::after{
+  content: "|";
+  font-weight: 400;
+  color:var(--l-1);
+  opacity: 1;
+  
+  animation: blink .7s infinite;
+}
+@keyframes blink{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
 .btn-knowmore button{
   cursor: pointer;
   margin-top: 5rem;
@@ -105,9 +255,91 @@ li .title{
   border-radius: .3rem;
 
   box-shadow: inset 0 0 0 0 var(--l-3);
-  transition: ease-out .7s;
+  transition: color ease-out .7s, box-shadow ease-out.7s;
 }
 .btn-knowmore button:hover{
   color: var(--l-bg);
   box-shadow: inset 30rem 0 0 0 var(--l-3);
+}
+
+/* ==== ABOUT ==================== */
+#about .container{
+  height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+/* ==== PROJECTS ==================== */
+#projects .container{
+  height: 80vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+/* ==== CONTACT ==================== */
+#contact .container{
+  margin:0;
+  height: 80vh;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  z-index: 10;
+}
+.text{
+  position: absolute;
+  top:0;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+
+  color: var(--l-2);
+}
+.circle{
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  
+  background: var(--l-3);
+}
+.contact-img{
+  position: absolute;
+  left: -4.5rem;
+  top: -4rem;
+  width: 30rem;
+  height: 30rem;
+}
+
+/* ==== SOCIAL MEDIA ==================== */
+.sm-wrapper{ 
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+
+  cursor: pointer;
+}
+.sm-wrapper a{
+  font-size: 6rem;
+  padding: 0 2rem;
+  color: var(--l-3);
+
+  transition: color .4s;
+}
+.sm-wrapper a:hover {
+  color: var(--l-2);
 }

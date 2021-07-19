@@ -6,6 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,64 +21,83 @@
     <header id="header">
       <nav class="container">
         <a href="#home" class="logo"><img src="assets/img/logo.svg" alt=""></a>
+
         <!-- MENU -->
         <div class="menu">
-          <ul class="grid">
+          <ul>
             <li><a class="title" href="#home">Início</a></li>
             <li><a class="title" href="#about">Sobre</a></li>
             <li><a class="title" href="#portfolio">Projetos</a></li>
             <li><a class="title" href="#contact">Contato</a></li>
           </ul>
         </div>
+
+        <!-- OPEN/CLOSE MENU -->
+        <div class="toggle open-menu"><i class="fas fa-bars"></i></div>
+        <div class="toggle close-menu"><i class="fas fa-times"></i></div>
+
       </nav>
     </header>
 
     <!-- MAIN -->
-    <main>
+    <main id="main">
 
-      <!-- TEMPORARIO -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <!-- TEMPORARIO -->
+      <a href="#"><span id="btn-up" class="show-up"><i class="fas fa-angle-up"></i></span></a>
 
       <!-- HOME -->
       <section class="section" id="home">
-        <div class="container grid">
+        <div class="container">
           <article id="textoHome">
-            <h2>Olá, eu sou o <span id="nome">Thiago Fernandes</span></h2>
+            <h2 class="show-wm">Olá, eu sou o <span id="nome">Thiago Fernandes</span></h2>
             <span>Desenvolvedor Web</span><br>
             <a href="#about" class="btn-knowmore"><button>Saiba mais</button></a>
           </article>
         </div>
       </section>
 
+      <!-- DIVISOR -->
+      <div class="divisor-1"></div>
+
       <!-- ABOUT -->
       <section class="section" id="about">
-        <div class="container grid">
+        <div class="container">
         </div>
       </section>
 
+      <!-- DIVISOR -->
+      <div class="divisor-2"></div>
+
       <!-- PORTFOLIO -->
-      <section class="section" id="portfolio">
-        <div class="container grid">
+      <section class="section" id="projects">
+        <div class="container">
         </div>
       </section>
+
+      <!-- DIVISOR -->
+      <div class="divisor-1"></div>
 
       <!-- CONTACT -->
       <section class="section" id="contact">
-        <div class="container grid">
+        <div class="container">
+          <div class="text">
+            <h2>Contato</h2>
+          </div>
+          <div class="circle"><img src="assets/img/contact-me.svg" alt="preguica" class="contact-img"></div>
+          <div class="sm-wrapper">
+            <a href="https://github.com/tr0n1337" class="git"><i class="fab fa-github-square"></i></a>
+            <a href="https://www.linkedin.com/in/thiago-souza-fernandes/" class="linkedin"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/thiago.souzaz/" class="instagram"><i
+                class="fab fa-instagram-square"></i></a>
+          </div>
         </div>
       </section>
+
     </main>
 
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
