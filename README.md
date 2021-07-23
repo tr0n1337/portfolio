@@ -19,9 +19,9 @@
 
 <br>
   
-<p align="center">
-  <a href="https://portfolio-pzm6mmild-tr0n1337.vercel.app/">Portfólio</a>
-</p>
+<h1 align="center">
+  <a href="https://portfolio-pzm6mmild-tr0n1337.vercel.app/">PORTFÓLIO</a>
+</h1>
 
 <br>
 
