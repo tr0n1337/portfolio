@@ -705,3 +705,15 @@ nav.show-menu .close-menu:hover{
   border: 0;
   }
 }
+
+body::-webkit-scrollbar {
+  width: .8rem;
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: var(--primaria);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--secundaria))
+}
