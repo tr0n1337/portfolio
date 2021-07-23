@@ -391,10 +391,19 @@ nav.show-menu .close-menu:hover{
   flex-direction: column;
   text-align: center;
 }
+.content-about{
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+}
+.text-about{
+  grid-column: 2;
+}
 .text-about p{
   font-family: "Fira Code" sans-serif;
-  font-size: 1.6rem;
-  line-height: 2rem;
+  font-size: 2.5rem;
+  line-height: 4rem;
   letter-spacing: 0;
   text-transform: none;
   text-align: start;
@@ -403,18 +412,13 @@ nav.show-menu .close-menu:hover{
 }
 .circle-about{
   position: relative;
-  width: 22rem;
-  height: 22rem;
-
-  border-radius: 50%;
-  background: rgb(var(--secundaria));
+  grid-row: 1;
 }
 .about-img{
   position: absolute;
-  left: -3.8rem;
-  bottom: -5rem;
-  width: 30rem;
-  height: 30rem;
+  left: -4rem;
+  width: 50rem;
+  height: 50rem;
 }
 
 /* ==== PROJECTS ==================== */
@@ -602,7 +606,6 @@ nav.show-menu .close-menu:hover{
     height: 20rem;
   }
 }
-
 @media (min-width: 1200px){
   nav .menu{
     opacity: 1;
@@ -659,5 +662,46 @@ nav.show-menu .close-menu:hover{
   .languages i{
     padding-right: .2rem;
     font-size: 3rem;
+  }
+}
+@media (max-width:1400px){
+  #about .container{
+    height: 100%;
+    margin:0 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .content-about{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-about p{
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+  .circle-about{
+    /* sr-only */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  .about-img{
+    /* sr-only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
   }
 }

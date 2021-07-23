@@ -39,7 +39,6 @@ swm(nome)
 // SWAP THEME
 const theme = document.querySelector('html')
 const c = document.getElementById('checkbox')
-
 c.addEventListener('change', () => {
   theme.classList.toggle('dark-theme')
 })
