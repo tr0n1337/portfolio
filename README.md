@@ -14,20 +14,20 @@
 <br>
 
 
-![screenshot](/.github/overview.png)
+![screenshot](/.github/overview1.png)
+![screenshot](/.github/overview2.png)
 
 <br>
 
 ## 🚀 Feito com
-
-- [HTML](https://developer.mozilla.org/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/docs/Web/CSS)
-- [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript)
-
 <br>
 
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img width="100px" height="33px" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></a><br><br>
+<a href="https://developer.mozilla.org/docs/Web/CSS"><img width="100px" height="33px" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/></a><br><br>
+<a href="https://developer.mozilla.org/docs/orphaned/Web/JavaScript"><img width="140px" height="33px" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/></a><br><br>
+
 ## 💻 Projeto
-Este portfólio é uma página institucional no formato SPA (Single Page Application), responsiva e com fins educativos. 
+Este portfólio é uma página institucional no formato SPA (Single Page Application), com alteração de temas, responsiva e com fins educativos. 
 Realizado no curso da:<p>&nbsp;<img src="https://img.shields.io/static/v1?label=&message=A%20Liga%20Digital&color=C06014&labelColor=0000"></p>
 Em parceria com a 
 <p>&nbsp;<img src="https://img.shields.io/static/v1?label=&message=Driven.cx&color=07a377&labelColor=0000"></p>
