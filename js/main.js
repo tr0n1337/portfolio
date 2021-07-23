@@ -1,4 +1,4 @@
-// Toggle menu when click in icon.
+// MENU TOGGLE
 const nav = document.querySelector("#header nav")
 const wm = document.querySelector(".show-wm")
 const up = document.querySelector("#btn-up")
@@ -12,7 +12,7 @@ for (const i of toggle) {
   })
 }
 
-// Hidden menu when click in a link of list.
+// SHOW MENU
 const links = document.querySelectorAll('nav ul li a')
 for (const link of links) {
   link.addEventListener("click", e => {
@@ -22,12 +22,15 @@ for (const link of links) {
   })
 }
 
-// Script write-machine
+// WRITE MACHINE
 function swm(element) {
   const arrayText = element.textContent.split('')
   element.textContent = ''
-  arrayText.forEach((letter, i) => { setTimeout(e => {
-  element.textContent += letter }, 100 * i)})
+  arrayText.forEach((letter, i) => {
+    setTimeout(e => {
+      element.textContent += letter
+    }, 100 * i)
+  })
 }
 const nome = document.querySelector(".nome")
 swm(nome)
@@ -41,25 +44,28 @@ c.addEventListener('change', () => {
   theme.classList.toggle('dark-theme')
 })
 
-// SCROLLREVEAL
+// SCROLL REVEAL
 const scroll = ScrollReveal({
   origin: 'top',
   distance: '3rem',
-  duration: 700,
+  duration: 900,
   reset: true
 })
 
 scroll.reveal(`#home .container,
-               #about .title-about, #about .text-about, #about .circle-about,
-               #contact .title-contact, #contact .circle-contact, .sm-wrapper .git, .sm-wrapper .linkedin, .sm-wrapper .instagram`, {interval: 100} )
+               #about .title-page, #about .text-about, #about .circle-about,
+               #contact .title-page, #contact .circle-contact, .sm-wrapper .git, .sm-wrapper .linkedin, .sm-wrapper .instagram,
+               #projects .title-page, .card`, {
+  interval: 100
+})
 
 
 // BACK TOP
- const backtop = document.querySelector('.btn-up')
- window.addEventListener('scroll', ()=>{
-   if(window.scrollY >= 1200){
-     backtop.classList.add('show-up')
-   }else{
-     backtop.classList.remove('show-up')
-   }
- })
+const backtop = document.querySelector('.btn-up')
+window.addEventListener('scroll', () => {
+  if (window.scrollY >= 1200) {
+    backtop.classList.add('show-up')
+  } else {
+    backtop.classList.remove('show-up')
+  }
+})

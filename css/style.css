@@ -28,6 +28,7 @@ html{
   --icons: #cb6715;
   --icons-h: #ce8b55;
   --btnkm: #f2f3ec;
+  --card-bg: #f2f3ec;
 
   /* FONT-SIZE DEFAULT */
   font-size: 62.5%;
@@ -47,6 +48,7 @@ html{
   --icons: #8a0dce;
   --icons-h: #9b4ac7;
   --btnkm: #EDEDED;
+  --card-bg: #242323;
 }
 
 /* ==== DEFAULT ==================== */
@@ -92,6 +94,29 @@ ul{
   width: 100%;
   display: flex;
   box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+}
+.title-page{
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  color: var(--text1);
+
+  position: relative;
+}
+.title-page::after{
+  content: "";
+  width: 0%;
+  height: .3rem;
+  
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  
+  background-color: var(--icons);
+  transition: width .2s;
+}
+.title-page:hover::after{
+  width: 100%;
 }
 
 /* ==== LOGO ====================*/
@@ -195,7 +220,7 @@ nav .close-menu{
 
   position: fixed;
   top: -1.5rem;
-  right: 3.5rem;
+  left: 3.5rem;
   z-index: 101;
 
   opacity: 0;
@@ -219,7 +244,6 @@ nav.show-menu .close-menu:hover{
 /* ==== SWAP THEME ==================== */
 .swap-themes{
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 
   position: absolute;
@@ -270,7 +294,7 @@ nav.show-menu .close-menu:hover{
 /* ==== BUTTON UP ==================== */
 .btn-up{
   position: fixed;
-  bottom: 7rem;
+  bottom: 5rem;
   right: 2rem;
   z-index: 10;
 
@@ -279,10 +303,10 @@ nav.show-menu .close-menu:hover{
   visibility: hidden;
   opacity: 0;
 
-  background: var(--text1) ;
+  background: rgb(var(--secundaria)) ;
   border-radius: .5rem;
 
-  transition:.5s;
+  transition: all .5s;
   transform: translateY(100%);
 }
 .btn-up.show-up{
@@ -299,7 +323,7 @@ nav.show-menu .close-menu:hover{
   color: var(--primaria);
 }
 .btn-up.show-up:hover{
-  background: rgb(var(--secundaria));
+  opacity: .9;
 }
 
 /* ==== HOME ==================== */
@@ -358,37 +382,14 @@ nav.show-menu .close-menu:hover{
 
 /* ==== ABOUT ==================== */
 #about .container{
-  position: relative;
-  margin: 2rem;
+  height: 90vh;
 
+  margin: 0 2rem;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   text-align: center;
-}
-.title-about{
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: .3rem;
-  text-transform: uppercase;
-  color: var(--text1);
-
-  position: relative;
-}
-.title-about::after{
-  content: "";
-  width: 0%;
-  height: .3rem;
-  
-  position: absolute;
-  left: 0;
-  bottom: -1rem;
-  
-  background-color: var(--icons);
-  transition: width .2s;
-}
-.title-about:hover::after{
-  width: 100%;
 }
 .text-about p{
   font-family: "Fira Code" sans-serif;
@@ -399,11 +400,9 @@ nav.show-menu .close-menu:hover{
   text-align: start;
 
   color: var(--textos);
-  margin-bottom: 6rem;
 }
 .circle-about{
   position: relative;
-  bottom: 4rem;
   width: 22rem;
   height: 22rem;
 
@@ -412,46 +411,137 @@ nav.show-menu .close-menu:hover{
 }
 .about-img{
   position: absolute;
-  left: -4rem;
-  bottom: -7.2rem;
+  left: -3.8rem;
+  bottom: -5rem;
   width: 30rem;
   height: 30rem;
 }
 
 /* ==== PROJECTS ==================== */
+#projects .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 
+  margin: 0 8rem;
+}
+.container-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 5rem;
+  margin: 5rem 0;
+}
+.card{
+  width: 40rem;
+  height: 35rem;
+  
+  background-color: var(--card-bg);
+  box-shadow: 0 0 .4rem rgba(0, 0, 0, .4);
+  border-bottom: .3rem solid rgb(var(--secundaria));
+  
+  transition: border .2s ease-out;
+}
+.card:hover{
+  border: .3rem solid rgb(var(--secundaria));
+  animation: scale-up-center .6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(100%);
+            transform: scale(100%);
+  }
+  100% {
+    -webkit-transform: scale(105%);
+            transform: scale(105%);
+  }
+}
+.content{
+  height: 30rem;
+  margin: 2rem;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  color: var(--text1);
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.title-card{
+  position: absolute;
+  top:0;
+}
+.title-project{
+  position: absolute;
+  top: 0;
+  font-size: 2rem;
+}
+.resume{
+  font-size: 1.8rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--textos);
+
+  position: absolute;
+  top: 4rem
+}
+.btn-project button{
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primaria);
+  padding: 1rem 3rem;
+  cursor: pointer;
+  
+  border-radius: .4rem;
+  background-color: rgb(var(--secundaria));
+  transition: opacity .7s;
+}
+.btn-project button:hover{
+  opacity: .8;
+}
+.btn-project i{
+  padding-left: 1rem;
+  color: var(--primaria);
+  font-size: 2rem;
+}
+.languages{
+  position: absolute;
+  bottom: 0;
+}
+.languages i {
+  padding-right: 1rem;
+  font-size: 5rem;
+
+  transition: opacity .5s;
+}
+.languages i:hover{
+  opacity: .7;
+}
+.fa-html5{
+  color: #FF6614;
+}
+.fa-css3-alt{
+  color: #0E9EE4;
+}
+.fa-js-square{
+  color: #F0D041;
+}
 
 /* ==== CONTACT ==================== */
 #contact .container{
-  position: relative;
   height: 80vh;
   margin: 0;
 
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   align-items: center;
-}
-.title-contact{
-  position: relative;
-  font-family: "Montserrat", sans-serif;
-  color: var(--text1);
-  letter-spacing: .3rem;
-  text-transform: uppercase;
-}
-.title-contact::after{
-  content: "";
-  width: 0%;
-  height: 0.3rem;
-  background-color: var(--icons);
-  
-  position: absolute;
-  left: 0;
-
-  transition: width .2s;
-}
-.title-contact:hover::after{
-  width: 100%;
+  flex-direction: column;
 }
 .circle-contact{
   position: relative;
@@ -477,7 +567,7 @@ nav.show-menu .close-menu:hover{
 }
 .sm-wrapper a{
   font-size: 6rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
   color: var(--icons);
   transition: color .5s;
 
@@ -493,7 +583,7 @@ nav.show-menu .close-menu:hover{
   align-items: center;
 
   margin:0;
-  height: 6vh;
+  height: 4vh;
   box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
 }
 .text-footer{
@@ -506,6 +596,13 @@ nav.show-menu .close-menu:hover{
 }
 
 /* ==== MEDIA ==================== */
+@media (max-width: 500px){
+  .card{
+    width: 25rem;
+    height: 20rem;
+  }
+}
+
 @media (min-width: 1200px){
   nav .menu{
     opacity: 1;
@@ -522,5 +619,25 @@ nav.show-menu .close-menu:hover{
   }
   nav .open-menu{
     display: none;
+  }
+}
+@media (max-width: 1200px){
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+  nav .open-menu{
+    position: absolute;
+    padding-left: 4rem;
+    left: 0;
+  }
+  nav .swap-themes{
+    right: 0;
+    padding-right: 3rem;
+  }
+  .logo i {
+    padding-right: .6rem;
   }
 }
