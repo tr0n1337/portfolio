@@ -14,8 +14,8 @@
 <br>
 
 
-![screenshot](/.github/overview1.png)
-![screenshot](/.github/overview2.png)
+![screenshot](/.github/ov1.png)
+![screenshot](/.github/ov2.png)
 
 <br>
   
