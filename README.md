@@ -20,7 +20,7 @@
 <br>
   
 <h1 align="center">
-  <a href="https://portfolio-pzm6mmild-tr0n1337.vercel.app/">PORTFÓLIO</a>
+  <a href="https://thiagoportfolio.vercel.app/">PORTFÓLIO</a>
 </h1>
 
 <br>
@@ -63,5 +63,5 @@ Esse projeto está sob a licença [MIT](https://choosealicense.com/licenses/mit/
 
 ## 📱 Contato
 
-- Website [porfolio](https://portfolio-tr0n1337.vercel.app/)
+- Website [porfolio](https://thiagoportfolio.vercel.app/)
 - GitHub [tr0n1337](https://github.com/tr0n1337/)
