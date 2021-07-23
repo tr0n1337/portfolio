@@ -18,10 +18,16 @@ img{
 /* ==== COLORS ==================== */
 html{
   /* LIGHT THEME */
-  --l-bg: #F3F4ED;
-  --l-1: #536162;
-  --l-2: #424642;
-  --l-3: #C06014;
+  --primaria: #f2f3ec;
+  --secundaria: 203, 103, 21;
+  --textos: #121214;
+  --text1: #434743;
+  --text2: #525f60;
+  --label: #cb6715;
+  --circle: #f2f3ec;
+  --icons: #cb6715;
+  --icons-h: #ce8b55;
+  --btnkm: #f2f3ec;
 
   /* FONT-SIZE DEFAULT */
   font-size: 62.5%;
@@ -30,12 +36,24 @@ html{
   scroll-behavior: smooth;
 
 }
+.dark-theme{
+  --primaria: #121214;
+  --secundaria: 82, 5, 123;
+  --textos: #EDEDED;
+  --text1: #EDEDED;
+  --text2: #444444;
+  --label: #52057b;
+  --circle: #121214;
+  --icons: #8a0dce;
+  --icons-h: #9b4ac7;
+  --btnkm: #EDEDED;
+}
 
 /* ==== DEFAULT ==================== */
 body{
   width: 100%;
   height: 100%;
-  background: var(--l-bg);
+  background: var(--primaria);
 
   font-family: "Fira Code", sans-serif;
   font-size: 2rem;
@@ -50,47 +68,52 @@ ul{
   list-style: none;
 }
 .divisor-1{
-  height: 0.1rem;
-  background: linear-gradient(270deg, var(--l-3) 0%, rgba(105, 51, 8, .34) 100%);
+  height: .1rem;
+  background: linear-gradient(
+  270deg, rgba(var(--secundaria), 1) 0%,
+          rgba(var(--secundaria), .2) 100%);
 }
 .divisor-2{
-  height: 0.1rem;
-  background: linear-gradient(90deg, var(--l-3) 0%, rgba(105, 51, 8, .34) 100%);
+  height: .1rem;
+  background: linear-gradient(
+  90deg, rgba(var(--secundaria), 1) 0%,
+          rgba(var(--secundaria), .2) 100%);
 }
 
 /* ==== LAYOUT ==================== */
 .container{
   margin-left: 1.5rem;
-  
 }
 .section{
   margin: 0 auto;
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 #header{
-  display: flex;
   width: 100%;
+  display: flex;
   box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
 }
 
 /* ==== LOGO ====================*/
-.logo{
-  width: 8rem;
+.logo i{
+  color: rgb(var(--secundaria));
+  font-size: 2.5rem;
+  padding-left: 3rem;
 }
 
 /* ==== NAV ==================== */
 nav{
-  height: 8rem;
+  width: 100%;  
+  height: 6rem;
+  margin-right: 3rem;
+
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;  
-
-  margin-right: 3rem;
+  justify-content: space-between;
 }
 .title{
-  color: var(--l-2);
-  font-family: "Fira COde", sans-serif;
+  color: var(--text1);
+  font-family: "Fira Code", sans-serif;
   font-weight: 700;
   font-size: 3rem;
 }
@@ -99,17 +122,17 @@ nav ul li a{
   transition: color .4s;
 }
 nav ul li a:hover{
-  color: var(--l-3);
+  color: rgb(var(--secundaria));
 }
 nav ul li a::after{
   content: "";
   width: 0%;
   height: 0.3rem;
-  background-color: var(--l-3);
+  background-color: rgb(var(--secundaria));
   
   position: absolute;
   left: 0;
-  bottom: -1rem;
+  bottom: -1.9rem;
 
   transition: width .2s;
 }
@@ -119,26 +142,35 @@ nav ul li a:hover::after{
 nav .menu{
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: .2s;
 }
+nav .menu ul{
+  display: none;
+}
+
 
 /* ==== SHOW-MENU (MOBILE) ==================== */
 nav.show-menu .menu{
-  opacity: 1;
-  visibility: visible;
-  
-  background: var(--l-bg);
-  
-  width: 100vw;
-  height: 100vh;
-  
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
 
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: var(--primaria);
+}
+nav.show-menu .menu ul{
+  display: flex;
+  flex-direction: column;
 }
 nav.show-menu ul li{
   padding: 2.5rem 0;
@@ -148,61 +180,126 @@ nav.show-menu ul li{
 /* ==== VISIBLE MENU ==================== */
 .toggle{
   cursor: pointer;
-
   font-size: 3rem;
-  color: var(--l-3);
+  color: rgb(var(--secundaria));
 }
 
 /* ==== ICON MENU ==================== */
 nav .open-menu{
+  font-size: 2.5rem;
   transition: color .5s;
+
 }
 nav .close-menu{
-  visibility: hidden;
-  opacity: 0;
+  font-size: 2.5rem;
 
-  position: absolute;
+  position: fixed;
+  top: -1.5rem;
   right: 3.5rem;
   z-index: 101;
 
-  transition: color .5s;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all .2s;
 }
 nav.show-menu .close-menu{
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
+  top: 1.5rem;
 }
 /* HOVER */
 nav .open-menu:hover{
-  color: var(--l-2);
+  color: var(--text1);
 }
 nav.show-menu .close-menu:hover{
-  color: var(--l-2);
+  color: var(--text1);
 }
 
+/* ==== SWAP THEME ==================== */
+.swap-themes{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position: absolute;
+  right: 8rem;
+}
+.label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  
+  width: 5rem;
+  height: 2.5rem;
+  
+  border-radius: 2rem;
+  background-color: var(--label);
+}
+.circle{
+  cursor: pointer;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-left: .4rem;
+
+  border-radius: 1rem;
+  background-color: var(--circle);
+
+  transition: transform .2s linear;
+}
+.checkbox{
+  /* sr-only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+.checkbox:checked + .label{
+  background-color: var(--label);
+}
+.checkbox:checked + .label .circle{
+  background-color: var(--circle);
+  transform: translateX(2.2rem);
+}
 
 /* ==== BUTTON UP ==================== */
-#btn-up.show-up{
+.btn-up{
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 7rem;
+  right: 2rem;
+  z-index: 10;
 
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
+  visibility: hidden;
+  opacity: 0;
 
-  background: var(--l-3) ;
-  border-radius: .4rem;
+  background: var(--text1) ;
+  border-radius: .5rem;
 
-  transition: background-color .5s;
+  transition:.5s;
+  transform: translateY(100%);
 }
-#btn-up i{
+.btn-up.show-up{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+}
+.btn-up i{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
-  color: var(--l-bg);
+
+  font-size: 3rem;
+  color: var(--primaria);
 }
-#btn-up.show-up:hover{
-  background: var(--l-2);
+.btn-up.show-up:hover{
+  background: rgb(var(--secundaria));
 }
 
 /* ==== HOME ==================== */
@@ -210,26 +307,25 @@ nav.show-menu .close-menu:hover{
   overflow: hidden;
 }
 #home .container{
-  height: 80vh;
+  height: 90vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
 #textoHome{
-  color: var(--l-1);
+  color: var(--text1);
 }
-#nome{
-  color: var(--l-3);
+.nome{
+  color: rgb(var(--secundaria));
 }
 .show-wm::after{
   content: "|";
-  font-weight: 400;
-  color:var(--l-1);
   opacity: 1;
   
+  font-weight: 400;
+  color:var(--text1);
   animation: blink .7s infinite;
 }
 @keyframes blink{
@@ -240,79 +336,131 @@ nav.show-menu .close-menu:hover{
     opacity: 0;
   }
 }
-
 .btn-knowmore button{
-  cursor: pointer;
   margin-top: 5rem;
   padding: 1rem;
   
   font-family: "Fira Code", sans-serif;
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--l-3);
-
-  border: solid .2rem var(--l-3);
+  color: rgb(var(--secundaria));
+  cursor: pointer;
+  
+  border: solid .2rem rgb(var(--secundaria));
   border-radius: .3rem;
-
-  box-shadow: inset 0 0 0 0 var(--l-3);
+  box-shadow: inset 0 0 0 0 rgb(var(--secundaria));
   transition: color ease-out .7s, box-shadow ease-out.7s;
 }
 .btn-knowmore button:hover{
-  color: var(--l-bg);
-  box-shadow: inset 30rem 0 0 0 var(--l-3);
+  color: var(--btnkm);
+  box-shadow: inset 30rem 0 0 0 rgb(var(--secundaria));
 }
 
 /* ==== ABOUT ==================== */
 #about .container{
-  height: 80vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-/* ==== PROJECTS ==================== */
-#projects .container{
-  height: 80vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-/* ==== CONTACT ==================== */
-#contact .container{
-  margin:0;
-  height: 80vh;
-
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin: 2rem;
 
-  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.text{
-  position: absolute;
-  top:0;
+.title-about{
   font-family: "Montserrat", sans-serif;
   letter-spacing: .3rem;
   text-transform: uppercase;
+  color: var(--text1);
 
-  color: var(--l-2);
-}
-.circle{
   position: relative;
+}
+.title-about::after{
+  content: "";
+  width: 0%;
+  height: .3rem;
+  
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  
+  background-color: var(--icons);
+  transition: width .2s;
+}
+.title-about:hover::after{
+  width: 100%;
+}
+.text-about p{
+  font-family: "Fira Code" sans-serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: start;
+
+  color: var(--textos);
+  margin-bottom: 6rem;
+}
+.circle-about{
+  position: relative;
+  bottom: 4rem;
+  width: 22rem;
+  height: 22rem;
+
+  border-radius: 50%;
+  background: rgb(var(--secundaria));
+}
+.about-img{
+  position: absolute;
+  left: -4rem;
+  bottom: -7.2rem;
+  width: 30rem;
+  height: 30rem;
+}
+
+/* ==== PROJECTS ==================== */
+
+
+/* ==== CONTACT ==================== */
+#contact .container{
+  position: relative;
+  height: 80vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.title-contact{
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text1);
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+.title-contact::after{
+  content: "";
+  width: 0%;
+  height: 0.3rem;
+  background-color: var(--icons);
+  
+  position: absolute;
+  left: 0;
+
+  transition: width .2s;
+}
+.title-contact:hover::after{
+  width: 100%;
+}
+.circle-contact{
+  position: relative;
+  margin-top: 6.5rem;
   width: 20rem;
   height: 20rem;
-  border-radius: 50%;
   
-  background: var(--l-3);
+  border-radius: 50%;
+  background: rgb(var(--secundaria));
 }
 .contact-img{
   position: absolute;
@@ -324,22 +472,55 @@ nav.show-menu .close-menu:hover{
 
 /* ==== SOCIAL MEDIA ==================== */
 .sm-wrapper{ 
-  position: absolute;
-  bottom: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-
+  margin-top: 6.5rem;
   cursor: pointer;
 }
 .sm-wrapper a{
   font-size: 6rem;
   padding: 0 2rem;
-  color: var(--l-3);
+  color: var(--icons);
+  transition: color .5s;
 
-  transition: color .4s;
 }
 .sm-wrapper a:hover {
-  color: var(--l-2);
+  color: var(--icons-h);
+}
+
+/* ==== FOOTER ==================== */
+#footer .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin:0;
+  height: 6vh;
+  box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+}
+.text-footer{
+  margin: 0 2rem;
+
+  font-family: "Fira Code", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--textos);
+}
+
+/* ==== MEDIA ==================== */
+@media (min-width: 1200px){
+  nav .menu{
+    opacity: 1;
+    visibility: visible;
+    padding-right: 15rem;
+  }
+  nav .menu ul{
+    display: flex;
+    gap: 3rem;
+  }
+  nav .menu ul li a.title{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  nav .open-menu{
+    display: none;
+  }
 }

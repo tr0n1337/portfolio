@@ -20,7 +20,17 @@
     <!-- HEADER -->
     <header id="header">
       <nav class="container">
-        <a href="#home" class="logo"><img src="assets/img/logo.svg" alt=""></a>
+        <a href="#home" class="logo"><i class="fab fa-tumblr"></i></a>
+
+        <!-- SWAP THEME -->
+        <div class="swap-themes">
+          <div class="swap">
+            <input type="checkbox" id="checkbox" class="checkbox">
+              <label for="checkbox" class="label">
+              <div class="circle"></div>
+            </label>
+          </div>
+        </div>
 
         <!-- MENU -->
         <div class="menu">
@@ -35,32 +45,41 @@
         <!-- OPEN/CLOSE MENU -->
         <div class="toggle open-menu"><i class="fas fa-bars"></i></div>
         <div class="toggle close-menu"><i class="fas fa-times"></i></div>
-
+        
       </nav>
     </header>
 
     <!-- MAIN -->
     <main id="main">
 
-      <a href="#"><span id="btn-up" class="show-up"><i class="fas fa-angle-up"></i></span></a>
+      <!-- BUTTON UP -->
+      <a href="#"><span class="btn-up"><i class="fas fa-angle-up"></i></span></a>
 
       <!-- HOME -->
       <section class="section" id="home">
         <div class="container">
           <article id="textoHome">
-            <h2 class="show-wm">Olá, eu sou o <span id="nome">Thiago Fernandes</span></h2>
+            <h2 class="show-wm">Olá, eu sou o <span class="nome">Thiago Fernandes</span></h2>
             <span>Desenvolvedor Web</span><br>
             <a href="#about" class="btn-knowmore"><button>Saiba mais</button></a>
           </article>
         </div>
       </section>
-
+      
       <!-- DIVISOR -->
       <div class="divisor-1"></div>
 
       <!-- ABOUT -->
       <section class="section" id="about">
         <div class="container">
+          <div class="title-about">
+            <h2>Sobre</h2>
+          </div>
+          <div class="text-about">
+            <p><br><br>Bom, meu nome é <span class="nome">Thiago Fernandes</span>, tenho 18 anos, sou de São Paulo e Abraços. Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br><br>
+              Vel doloribus cum quam ullam qui, dignissimos atque et provident distinctio, velit libero repellendus? Ratione quaerat odio ipsa praesenti</p>
+          </div>
+          <div class="circle-about"><img src="assets/img/study.svg" alt="preguica" class="about-img"></div>
         </div>
       </section>
 
@@ -79,15 +98,17 @@
       <!-- CONTACT -->
       <section class="section" id="contact">
         <div class="container">
-          <div class="text">
+          <div class="title-contact">
             <h2>Contato</h2>
           </div>
-          <div class="circle"><img src="assets/img/contact-me.svg" alt="preguica" class="contact-img"></div>
+          <div class="circle-contact">
+            <img src="assets/img/contact-me.svg" alt="preguica" class="contact-img">
+          </div>
           <div class="sm-wrapper">
-            <a href="https://github.com/tr0n1337" class="git"><i class="fab fa-github-square"></i></a>
-            <a href="https://www.linkedin.com/in/thiago-souza-fernandes/" class="linkedin"><i
+            <a href="https://github.com/tr0n1337" target="_blank" class="git"><i class="fab fa-github-square"></i></a>
+            <a href="https://www.linkedin.com/in/thiago-souza-fernandes/" target="_blank" class="linkedin"><i
                 class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/thiago.souzaz/" class="instagram"><i
+            <a href="https://www.instagram.com/thiago.souzaz/" target="_blank" class="instagram"><i
                 class="fab fa-instagram-square"></i></a>
           </div>
         </div>
@@ -95,9 +116,23 @@
 
     </main>
 
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="text-footer">
+          <p>Desenvolvido por <span class="nome">Thiago Fernandes</span></p>
+        </div>
+      </div>
+    </footer>
+
   </div>
 
+  <!-- scrollreveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- script -->
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
