@@ -437,7 +437,7 @@ nav.show-menu .close-menu:hover{
   flex-wrap: wrap;
 
   gap: 5rem;
-  margin: 5rem 0;
+  margin: 6rem 1rem;
 }
 .card{
   width: 40rem;
