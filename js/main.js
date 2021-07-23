@@ -48,14 +48,14 @@ c.addEventListener('change', () => {
 const scroll = ScrollReveal({
   origin: 'top',
   distance: '3rem',
-  duration: 900,
+  duration: 700,
   reset: true
 })
 
 scroll.reveal(`#home .container,
                #about .title-page, #about .text-about, #about .circle-about,
                #contact .title-page, #contact .circle-contact, .sm-wrapper .git, .sm-wrapper .linkedin, .sm-wrapper .instagram,
-               #projects .title-page, .card`, {
+               #projects .title-page, .card, .title-project, .title-card, .resume, .btn-project, .languages i`, {
   interval: 100
 })
 

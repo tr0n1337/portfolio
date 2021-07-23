@@ -641,3 +641,23 @@ nav.show-menu .close-menu:hover{
     padding-right: .6rem;
   }
 }
+@media (max-width: 500px){
+  .resume{
+    font-size: 1.2rem;
+  }
+  .btn-project button{
+    margin-bottom: 8rem;
+    font-size: 1.2rem;
+    padding: .5rem;
+  }
+  .btn-project i{
+    font-size: 1.2rem;
+  }
+  .languages{
+    bottom: 13rem;
+  }
+  .languages i{
+    padding-right: .2rem;
+    font-size: 3rem;
+  }
+}
