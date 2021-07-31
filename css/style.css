@@ -29,6 +29,7 @@ html{
   --icons-h: #ce8b55;
   --btnkm: #f2f3ec;
   --card-bg: #f2f3ec;
+  --btncard: #f2f3ec;
 
   /* FONT-SIZE DEFAULT */
   font-size: 62.5%;
@@ -498,7 +499,7 @@ nav.show-menu .close-menu:hover{
   font-size: 1.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--primaria);
+  color: var(--btncard);
   padding: 1rem 3rem;
   cursor: pointer;
   
@@ -511,7 +512,7 @@ nav.show-menu .close-menu:hover{
 }
 .btn-project i{
   padding-left: 1rem;
-  color: var(--primaria);
+  color: var(--btncard);
   font-size: 2rem;
 }
 .languages{
